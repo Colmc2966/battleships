@@ -2,6 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+from random import randint
 
 PLAYER_BOARD = [[' '] * 8 for x in range(6)] 
 CPU_BOARD = [[' '] * 8 for x in range(6)]
@@ -17,7 +18,11 @@ def print_board(board):
         row_number += 1
 
 def create_ship_locations():
-    pass
+    for ship in range (3):
+        ship_row, ship_column = randint(0,5), randint(0,5)
+        while board[ship_row] [ship_column] == 'X':
+            ship_row, ship_column = randint(0-,5), randint(0,5)
+        board[ship_row][ship_column] = 'X'
 
 def user_guesses():
     pass
