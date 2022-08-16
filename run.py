@@ -17,11 +17,11 @@ def print_board(board):
         print(row_number)
         row_number += 1
 
-def create_ship_locations():
+def create_ship_locations(board):
     for ship in range (3):
         ship_row, ship_column = randint(0,5), randint(0,5)
-        while board[ship_row] [ship_column] == 'X':
-            ship_row, ship_column = randint(0-,5), randint(0,5)
+        while board[ship_row][ship_column] == 'X':
+            ship_row, ship_column = randint(0,5), randint(0,5)
         board[ship_row][ship_column] = 'X'
 
 def user_guesses():
@@ -40,10 +40,11 @@ def game_tracker(board):
     count = 0 
     for row in board:
         for column in row:
-            if column =='X':
+            if column == 'X':
                 count += 1
     return count
 
-create_ship_locations()
-turns = 5
-
+create_ship_locations(CPU_BOARD)
+turns = 3
+print_board(CPU_BOARD)
+print_board(PLAYER_BOARD)
