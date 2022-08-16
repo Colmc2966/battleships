@@ -5,7 +5,7 @@
 
 from random import randint
 
-PLAYER_BOARD = [[' '] * 8 for x in range(6)] 
+PLAYER_BOARD = [[' '] * 8 for x in range(6)]
 CPU_BOARD = [[' '] * 8 for x in range(6)]
 
 guessing_code = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5}
@@ -19,10 +19,10 @@ def print_board(board):
         row_number += 1
 
 def create_ship_locations(board):
-    for ship in range (6):
-        ship_row, ship_column = randint(0,5), randint(0,5)
+    for ship in range(6):
+        ship_row, ship_column = randint(0, 5), randint(0, 5)
         while board[ship_row][ship_column] == 'X':
-            ship_row, ship_column = randint(0,5), randint(0,5)
+            ship_row, ship_column = randint(0, 5), randint(0, 5)
         board[ship_row][ship_column] = 'X'
 
 def user_guesses():
@@ -38,7 +38,7 @@ def user_guesses():
 
 
 def game_tracker(board):
-    count = 0 
+    count = 0
     for row in board:
         for column in row:
             if column == 'X':
@@ -60,7 +60,7 @@ while turns > 0:
     else:
         print('You missed the battlehsips')
         CPU_BOARD[row][column] = '-'
-        turns -=1
+        turns -= 1
     if game_tracker(CPU_BOARD) == 6:
         print('You sunk all the battleships! Well done')
         break
