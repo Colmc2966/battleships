@@ -36,9 +36,14 @@ def user_guesses():
     return int(row) - 1, guessing_code[column]
 
 
-def game_tracker():
-    pass
+def game_tracker(board):
+    count = 0 
+    for row in board:
+        for column in row:
+            if column =='X':
+                count += 1
+    return count
 
 create_ship_locations()
-turns = 6
+turns = 5
 
