@@ -25,7 +25,16 @@ def create_ship_locations():
         board[ship_row][ship_column] = 'X'
 
 def user_guesses():
-    pass
+    row = input('Enter a ship row 1-5')
+    while row not in '12345':
+        print('Enter a valid ship row')
+        row = input('Enter a ship row 1-5')
+    column = input('Enter a ship column A-F').upper()
+    while column not in 'ABCDEF':
+        print('Enter a valid ship column')
+        column = input('Enter a ship column A-F')
+    return int(row) - 1, guessing_code[column]
+
 
 def game_tracker():
     pass
