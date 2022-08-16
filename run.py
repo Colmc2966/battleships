@@ -2,6 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
+from os import cpu_count
 from random import randint
 
 PLAYER_BOARD = [[' '] * 8 for x in range(6)] 
@@ -14,11 +15,11 @@ def print_board(board):
     print('  -----------')
     row_number = 1
     for row in board:
-        print(row_number)
+        print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
 
 def create_ship_locations(board):
-    for ship in range (3):
+    for ship in range (6):
         ship_row, ship_column = randint(0,5), randint(0,5)
         while board[ship_row][ship_column] == 'X':
             ship_row, ship_column = randint(0,5), randint(0,5)
@@ -45,6 +46,22 @@ def game_tracker(board):
     return count
 
 create_ship_locations(CPU_BOARD)
-turns = 3
-print_board(CPU_BOARD)
-print_board(PLAYER_BOARD)
+turns = 8
+while turns > 0:
+    print('Enjoy your game of Battleship')
+    print(_board(CPU_BOARD))
+    row, column = ship_location(
+        if CPU_BOARD[row][column] == '-':
+            print(Row/Column has already been guessed)
+        elif PLAYER_BOARD[row][column] == 'X':
+            print('You have hit a battleship')
+            CPU_BOARD[row][column] = 'X'
+            turns -= 1
+        else:
+            print('You missed the battlehsips')
+            CPU_BOARD[row][column] = '-'
+            turns -=1
+        if game_tracker(CPU_BOARD) == 6:
+            print('You sunk all the battleships! Well done')
+            break
+    )
