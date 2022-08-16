@@ -2,7 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
-from os import cpu_count
+
 from random import randint
 
 PLAYER_BOARD = [[' '] * 8 for x in range(6)] 
@@ -25,7 +25,7 @@ def create_ship_locations(board):
             ship_row, ship_column = randint(0,5), randint(0,5)
         board[ship_row][ship_column] = 'X'
 
-def user_guesses():.py
+def user_guesses():
     row = input('Enter a ship row 1-5')
     while row not in '12345':
         print('Enter a valid ship row')
@@ -45,27 +45,26 @@ def game_tracker(board):
                 count += 1
     return count
 
-create_ship_locations(CPU_BOARD)
+create_ship_locations(PLAYER_BOARD)
 turns = 8
 while turns > 0:
     print('Enjoy your game of Battleship')
-    print(_board(CPU_BOARD))
-    row, column = ship_location()
-        if CPU_BOARD[row][column] == '-':
-            print(Row/Column has already been guessed)
-        elif PLAYER_BOARD[row][column] == 'X':
-            print('You have hit a battleship')
-            CPU_BOARD[row][column] = 'X'
-            turns -= 1
-        else:
-            print('You missed the battlehsips')
-            CPU_BOARD[row][column] = '-'
-            turns -=1
-        if game_tracker(CPU_BOARD) == 6:
-            print('You sunk all the battleships! Well done')
-            break
-
-        print('You have ' + str(turns) + 'turns remaining')
-        if turns == 0:
-            print('You have no turns remaining. The game is over')
-            break
+    print_board(CPU_BOARD)
+    row, column = user_guesses()
+    if CPU_BOARD[row][column] == '-':
+        print('Row or Column has already been guessed')
+    elif PLAYER_BOARD[row][column] == 'X':
+        print('You have hit a battleship')
+        CPU_BOARD[row][column] = 'X'
+        turns -= 1
+    else:
+        print('You missed the battlehsips')
+        CPU_BOARD[row][column] = '-'
+        turns -=1
+    if game_tracker(CPU_BOARD) == 6:
+        print('You sunk all the battleships! Well done')
+        break
+    print('You have ' + str(turns) + ' turns remaining')
+    if turns == 0:
+        print('You have no turns remaining. The game is over')
+        break
