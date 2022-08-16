@@ -10,6 +10,7 @@ CPU_BOARD = [[' '] * 8 for x in range(6)]
 
 guessing_code = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5}
 
+
 def print_board(board):
     print('  A B C D E F ')
     print('  -----------')
@@ -18,12 +19,14 @@ def print_board(board):
         print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
 
+
 def create_ship_locations(board):
     for ship in range(6):
         ship_row, ship_column = randint(0, 5), randint(0, 5)
         while board[ship_row][ship_column] == 'X':
             ship_row, ship_column = randint(0, 5), randint(0, 5)
         board[ship_row][ship_column] = 'X'
+
 
 def user_guesses():
     row = input('Enter a ship row 1-5')
