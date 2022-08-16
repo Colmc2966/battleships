@@ -25,7 +25,7 @@ def create_ship_locations(board):
             ship_row, ship_column = randint(0,5), randint(0,5)
         board[ship_row][ship_column] = 'X'
 
-def user_guesses():
+def user_guesses():.py
     row = input('Enter a ship row 1-5')
     while row not in '12345':
         print('Enter a valid ship row')
@@ -50,7 +50,7 @@ turns = 8
 while turns > 0:
     print('Enjoy your game of Battleship')
     print(_board(CPU_BOARD))
-    row, column = ship_location(
+    row, column = ship_location()
         if CPU_BOARD[row][column] == '-':
             print(Row/Column has already been guessed)
         elif PLAYER_BOARD[row][column] == 'X':
@@ -64,4 +64,8 @@ while turns > 0:
         if game_tracker(CPU_BOARD) == 6:
             print('You sunk all the battleships! Well done')
             break
-    )
+
+        print('You have ' + str(turns) + 'turns remaining')
+        if turns == 0:
+            print('You have no turns remaining. The game is over')
+            break
