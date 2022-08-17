@@ -8,7 +8,7 @@ from random import randint
 PLAYER_BOARD = [[' '] * 6 for x in range(6)]
 CPU_BOARD = [[' '] * 6 for x in range(6)]
 
-guessing_code = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5 }
+guessing_code = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5}
 
 
 def print_board(board):
