@@ -84,7 +84,7 @@ If the player guesses all correct locations of the battleships, they have won th
   -  Link the Heroku app to the correct repository
   - Click on deploy
 
-The live link of my project can be found here - [General Knowledge quiz](https://colmc2966.github.io/General-knowledge-quiz/)
+The live link of my project can be found here - [Battleships](https://battleshipsp3project.herokuapp.com/)
 
 
 ## Credits 
