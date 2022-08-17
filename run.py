@@ -29,10 +29,10 @@ def create_ship_locations(board):
 
 
 def user_guesses():
-    row = input('Enter a ship row 1-5')
+    row = input('Enter a ship row 1-6')
     while row not in '12345':
         print('Enter a valid ship row')
-        row = input('Enter a ship row 1-5')
+        row = input('Enter a ship row 1-6')
     column = input('Enter a ship column A-F').upper()
     while column not in 'ABCDEF':
         print('Enter a valid ship column')
